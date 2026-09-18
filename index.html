@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLR Week 1 Report - Marriam Rasib</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/theme/white.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        .reveal {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            color: var(--text-dark);
+        }
+
+        .reveal .slides {
+            text-align: left;
+        }
+
+        .reveal .slides section {
+            background: var(--bg-card);
+            padding: 35px 45px;
+            border-radius: 12px;
+            box-sizing: border-box;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .reveal h1 {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 2em;
+            margin-bottom: 0.3em;
+            letter-spacing: -0.02em;
+        }
+
+        .reveal h2 {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.5em;
+            margin-bottom: 0.7em;
+            padding-bottom: 0.3em;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+
+        .reveal h3 {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1.15em;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal h4 {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal p {
+            color: var(--text-dark);
+            font-weight: 400;
+            line-height: 1.6;
+            font-size: 0.85em;
+            margin-bottom: 0.6em;
+        }
+
+        .reveal li {
+            color: var(--text-dark);
+            margin-bottom: 0.5em;
+            line-height: 1.5;
+            font-size: 0.8em;
+        }
+
+        .reveal strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .reveal ul,
+        .reveal ol {
+            margin-left: 1.2em;
+            margin-bottom: 0.6em;
+        }
+
+        .reveal ul li::marker {
+            color: var(--secondary);
+        }
+
+        .reveal ol li::marker {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .reveal table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.7em;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .reveal table th {
+            background: var(--primary);
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .reveal table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-dark);
+        }
+
+        .reveal table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .reveal table tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .reveal .block {
+            background: var(--bg-light);
+            border-left: 4px solid var(--secondary);
+            padding: 15px 18px;
+            margin: 12px 0;
+            border-radius: 6px;
+        }
+
+        .reveal .block p {
+            margin: 0;
+            font-size: 0.85em;
+        }
+
+        .reveal .alert-block {
+            background: #fef2f2;
+            border-left: 4px solid var(--danger);
+            padding: 15px 18px;
+            margin: 12px 0;
+            border-radius: 6px;
+        }
+
+        .reveal .alert-block p {
+            margin: 0;
+            font-size: 0.8em;
+        }
+
+        .reveal .warning-block {
+            background: #fffbeb;
+            border-left: 4px solid var(--accent);
+            padding: 15px 18px;
+            margin: 12px 0;
+            border-radius: 6px;
+        }
+
+        .reveal .warning-block p {
+            margin: 0;
+            font-size: 0.8em;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px 18px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-primary {
+            border-top: 4px solid var(--primary);
+        }
+
+        .card-secondary {
+            border-top: 4px solid var(--secondary);
+        }
+
+        .card-accent {
+            border-top: 4px solid var(--accent);
+        }
+
+        .card-danger {
+            border-top: 4px solid var(--danger);
+        }
+
+        .badge-done {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .badge-progress {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .badge-pending {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .two-column {
+            display: flex;
+            gap: 25px;
+            justify-content: space-between;
+        }
+
+        .two-column>div {
+            flex: 1;
+        }
+
+        .reveal .slide-number {
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 0.75em;
+        }
+
+        .reveal .progress {
+            color: var(--secondary);
+            height: 4px;
+        }
+
+        .reveal .controls {
+            color: var(--primary);
+        }
+
+        .title-slide {
+            text-align: center;
+        }
+
+        .title-slide h1 {
+            font-size: 2.3em;
+            margin-bottom: 0.5em;
+        }
+
+        .title-slide h3 {
+            font-size: 1.15em;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-bottom: 1.5em;
+        }
+
+        .title-slide .meta {
+            color: var(--text-light);
+            font-size: 0.85em;
+            line-height: 1.9;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 2px solid var(--secondary);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary);
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .rq-card {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .rq-card h4 {
+            margin: 0 0 5px 0;
+            font-size: 1em;
+        }
+
+        .rq-card p {
+            margin: 0;
+            font-size: 0.8em;
+            color: var(--text-light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .stat-card .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.7em;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Title -->
+            <section class="title-slide">
+                <h1>SLR Week 1 Progress Report</h1>
+                <h3>Systematic Literature Review: AI-Based Automated Medical Coding</h3>
+                <div class="meta">
+                    <p><strong>Marriam Rasib</strong> (MSDS24027)</p>
+                    <p>Information Technology University (ITU)</p>
+                    <p>Supervisor: Dr. Muhammad Asif</p>
+                    <p>September 18, 2026</p>
+                </div>
+            </section>
+
+            <!-- Slide 2: Agenda -->
+            <section>
+                <h2>Agenda</h2>
+                <div class="two-column">
+                    <div>
+                        <ol>
+                            <li>Research Objective</li>
+                            <li>Research Questions (RQ1–RQ4)</li>
+                            <li>Information Sources</li>
+                            <li>Publication Period</li>
+                            <li>Inclusion Criteria</li>
+                            <li>Exclusion Criteria</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <ol start="7">
+                            <li>Search Strategy (PubMed)</li>
+                            <li>Search Results Summary</li>
+                            <li>Zotero Setup</li>
+                            <li>Current Status</li>
+                            <li>Preliminary Observations</li>
+                            <li>Next Steps</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Research Objective -->
+            <section>
+                <h2>Research Objective</h2>
+                <div class="block">
+                    <p>To systematically review existing research on <strong>AI-based automated medical coding</strong>,
+                        with particular emphasis on:</p>
+                </div>
+                <ul>
+                    <li><strong>Datasets and benchmarks</strong> for medical coding</li>
+                    <li><strong>Coding-system coverage</strong> (ICD-10-CM/PCS, CPT, HCPCS)</li>
+                    <li><strong>LLM and multi-agent approaches</strong> for automated coding</li>
+                    <li><strong>Publicly accessible resources</strong> for CPT and HCPCS coding</li>
+                </ul>
+            </section>
+
+            <!-- Slide 4: Research Questions -->
+            <section>
+                <h2>Research Questions</h2>
+                <div class="rq-card">
+                    <h4>RQ1 — Dataset Landscape</h4>
+                    <p>What publicly available datasets exist for automated medical coding? Which coding systems do they
+                        cover?</p>
+                </div>
+                <div class="rq-card" style="border-left-color: var(--primary);">
+                    <h4>RQ2 — AI Methods</h4>
+                    <p>What AI-based approaches have been proposed? What datasets and coding systems evaluate them?</p>
+                </div>
+                <div class="rq-card" style="border-left-color: var(--accent);">
+                    <h4>RQ3 — Multi-Agent Systems</h4>
+                    <p>How have multi-agent systems been applied to automated medical coding?</p>
+                </div>
+                <div class="rq-card" style="border-left-color: var(--danger);">
+                    <h4>RQ4 — CPT/HCPCS Gap</h4>
+                    <p>What gaps exist in publicly accessible datasets for automated CPT and HCPCS coding?</p>
+                </div>
+            </section>
+
+            <!-- Slide 5: Information Sources -->
+            <section>
+                <h2>Information Sources</h2>
+                <div class="two-column">
+                    <div>
+                        <h4>Primary Databases</h4>
+                        <ul>
+                            <li>PubMed / MEDLINE</li>
+                            <li>IEEE Xplore</li>
+                            <li>Scopus</li>
+                            <li>Web of Science</li>
+                            <li>ACM Digital Library</li>
+                            <li>ACL Anthology</li>
+                            <li>ScienceDirect</li>
+                            <li>Embase</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Supplementary</h4>
+                        <ul>
+                            <li>arXiv</li>
+                            <li>Google Scholar</li>
+                        </ul>
+                        <h4>Citation-Based</h4>
+                        <ul>
+                            <li>Backward citation searching</li>
+                            <li>Forward citation searching</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Publication Period -->
+            <section>
+                <h2>Publication Period</h2>
+                <div class="highlight-box">
+                    <h3>January 1, 2020 — September 18, 2026</h3>
+                </div>
+                <h4>Rationale</h4>
+                <ul>
+                    <li>Captures recent advances in LLM-based and agentic approaches</li>
+                    <li>Pre-2020 studies belong to the pre-LLM era</li>
+                    <li>Focus on current state-of-the-art methods</li>
+                </ul>
+            </section>
+
+            <!-- Slide 7: Inclusion Criteria -->
+            <section>
+                <h2>Inclusion Criteria</h2>
+                <ul>
+                    <li><strong>IC1:</strong> Published between January 1, 2020 and September 18, 2026</li>
+                    <li><strong>IC2:</strong> Published in peer-reviewed journals and conferences</li>
+                    <li><strong>IC3:</strong> Focus on automated medical coding using AI/ML/NLP/LLM</li>
+                    <li><strong>IC4:</strong> Report on ICD-10-CM, ICD-10-PCS, CPT, or HCPCS coding systems</li>
+                    <li><strong>IC5:</strong> Describe or evaluate datasets, benchmarks, or resources</li>
+                    <li><strong>IC6:</strong> Propose or evaluate multi-agent or agentic approaches</li>
+                    <li><strong>IC7:</strong> Discuss explainability, verification, validation, or uncertainty</li>
+                    <li><strong>IC8:</strong> Available in full text</li>
+                </ul>
+            </section>
+
+            <!-- Slide 8: Exclusion Criteria -->
+            <section>
+                <h2>Exclusion Criteria</h2>
+                <ul>
+                    <li><strong>EC1:</strong> Published before January 1, 2020</li>
+                    <li><strong>EC2:</strong> Review articles, editorials, commentaries, book chapters</li>
+                    <li><strong>EC3:</strong> Not focused on medical coding (e.g., general clinical NLP)</li>
+                    <li><strong>EC4:</strong> Focus only on ICD-9 (unless comparative with ICD-10)</li>
+                    <li><strong>EC5:</strong> No empirical results (purely theoretical papers)</li>
+                    <li><strong>EC6:</strong> Duplicate publications</li>
+                    <li><strong>EC7:</strong> Preprints without peer review</li>
+                </ul>
+            </section>
+
+            <!-- Slide 9: Screening Process -->
+            <section>
+                <h2>Screening Process</h2>
+                <div style="display: flex; justify-content: space-around; align-items: center; margin: 40px 0;">
+                    <div class="card card-primary" style="text-align: center; min-width: 200px;">
+                        <h4>Stage 1</h4>
+                        <p style="font-size: 0.8em; margin: 0;">Title & Abstract Screening</p>
+                    </div>
+                    <div style="font-size: 2em; color: var(--secondary);">→</div>
+                    <div class="card card-secondary" style="text-align: center; min-width: 200px;">
+                        <h4>Stage 2</h4>
+                        <p style="font-size: 0.8em; margin: 0;">Full-Text Screening</p>
+                    </div>
+                    <div style="font-size: 2em; color: var(--secondary);">→</div>
+                    <div class="card card-accent" style="text-align: center; min-width: 200px;">
+                        <h4>Stage 3</h4>
+                        <p style="font-size: 0.8em; margin: 0;">Quality & Data Extraction</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: PubMed Search Strategy -->
+            <section>
+                <h2>Search Strategy: PubMed</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">#</th>
+                            <th>Search String</th>
+                            <th style="width: 15%;">Results</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Medical coding + Multi-agent + Dataset</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Medical coding + Multi-agent</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Medical coding + LLM</td>
+                            <td>64</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Medical coding + Dataset</td>
+                            <td>171</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>ICD-10 + Multi-agent/LLM</td>
+                            <td>56</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>CPT + Medical coding</td>
+                            <td>174</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>HCPCS + Medical coding</td>
+                            <td>3</td>
+                        </tr>
+                        <tr style="background: #dbeafe;">
+                            <td colspan="2"><strong>Total</strong></td>
+                            <td><strong>483</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Slide 11: Search Results Summary (UPDATED) -->
+            <section>
+                <h2>Search Results Summary</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">483</span>
+                        <span class="stat-label">Raw Results</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">241</span>
+                        <span class="stat-label">Unique Papers</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">102</span>
+                        <span class="stat-label">Duplicates Removed</span>
+                    </div>
+                </div>
+                <div class="warning-block">
+                    <h4>Preliminary Observations</h4>
+                    <ul style="font-size: 0.75em; margin-bottom: 0;">
+                        <li><strong>ICD-10-CM:</strong> Most retrieved papers focus on ICD-10-CM coding</li>
+                        <li><strong>CPT:</strong> 174 raw results — relevance to be assessed during screening</li>
+                        <li><strong>HCPCS:</strong> Only 3 raw results — requires further investigation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 12: Zotero Setup -->
+            <section>
+                <h2>Zotero Setup</h2>
+                <div class="two-column">
+                    <div>
+                        <h4>Collections</h4>
+                        <ul style="font-size: 0.75em;">
+                            <li>00_All_PubMed (241 papers)</li>
+                            <li>01_Raw_Search_Results</li>
+                            <li>02_Title_Abstract_Screened</li>
+                            <li>03_FullText_Screened</li>
+                            <li>04_Included_Papers</li>
+                            <li>05_Excluded_Papers</li>
+                            <li>06_Datasets_Papers</li>
+                            <li>07_Grey_Literature</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Tags Applied</h4>
+                        <ul style="font-size: 0.75em;">
+                            <li><strong>Source:</strong> #PubMed, #ACL, #SemanticScholar</li>
+                            <li><strong>Code System:</strong> #ICD10, #CPT, #HCPCS</li>
+                            <li><strong>Topic:</strong> #MultiAgent, #Dataset</li>
+                        </ul>
+                        <div class="block" style="margin-top: 15px;">
+                            <p style="font-size: 0.75em; margin: 0;">Reference manager: Zotero 10</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 13: Current Status -->
+            <section>
+                <h2>Current Status (Week 1)</h2>
+                <table style="font-size: 0.65em;">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Status</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SLR Protocol</td>
+                            <td><span class="badge-done">Completed</span></td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>PubMed Searches</td>
+                            <td><span class="badge-done">Completed</span></td>
+                            <td>7 searches</td>
+                        </tr>
+                        <tr>
+                            <td>PubMed Papers Collected</td>
+                            <td><span class="badge-done">Completed</span></td>
+                            <td>241 unique</td>
+                        </tr>
+                        <tr>
+                            <td>Zotero Setup</td>
+                            <td><span class="badge-done">Completed</span></td>
+                            <td>8 collections</td>
+                        </tr>
+                        <tr>
+                            <td>Duplicate Removal</td>
+                            <td><span class="badge-done">Completed</span></td>
+                            <td>102 removed</td>
+                        </tr>
+                        <tr>
+                            <td>ACL Anthology Search</td>
+                            <td><span class="badge-progress">In Progress</span></td>
+                            <td>6,070 (too broad)</td>
+                        </tr>
+                        <tr>
+                            <td>Semantic Scholar Search</td>
+                            <td><span class="badge-progress">In Progress</span></td>
+                            <td>48 (title-based)</td>
+                        </tr>
+                        <tr>
+                            <td>arXiv Search</td>
+                            <td><span class="badge-pending">Pending</span></td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Title/Abstract Screening</td>
+                            <td><span class="badge-pending">Pending</span></td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Full-Text Screening</td>
+                            <td><span class="badge-pending">Pending</span></td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Data Extraction</td>
+                            <td><span class="badge-pending">Pending</span></td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!-- Slide 14: Preliminary Observations (FIXED) -->
+            <section>
+                <h2>Preliminary Observations</h2>
+                <div class="card card-primary" style="margin-bottom: 8px; padding: 12px 15px;">
+                    <h4 style="margin-bottom: 4px; font-size: 0.95em;">Observation 1: ICD-10 Dominance</h4>
+                    <p style="font-size: 0.75em; margin: 0;">The majority of retrieved papers focus on <strong>ICD-10-CM
+                            coding</strong>, with less emphasis on CPT and HCPCS.</p>
+                </div>
+                <div class="card card-secondary" style="margin-bottom: 8px; padding: 12px 15px;">
+                    <h4 style="margin-bottom: 4px; font-size: 0.95em;">Observation 2: CPT Coverage</h4>
+                    <p style="font-size: 0.75em; margin: 0;"><strong>174 raw results</strong> were retrieved for CPT. Relevance will
+                        be assessed during title/abstract screening.</p>
+                </div>
+                <div class="card card-accent" style="margin-bottom: 8px; padding: 12px 15px;">
+                    <h4 style="margin-bottom: 4px; font-size: 0.95em;">Observation 3: HCPCS Scarcity</h4>
+                    <p style="font-size: 0.75em; margin: 0;">Only <strong>3 raw results</strong> were retrieved for HCPCS in PubMed,
+                        requiring further investigation across additional databases.</p>
+                </div>
+                <div class="block" style="padding: 12px 15px; margin-top: 8px;">
+                    <h4 style="margin-bottom: 4px; font-size: 0.9em;">Note</h4>
+                    <p style="font-size: 0.72em; margin: 0;">These are preliminary observations from raw search results. Final
+                        findings will be reported after title/abstract and full-text screening are complete.</p>
+                </div>
+            </section>
+
+            <!-- Slide 15: Next Steps -->
+            <section>
+                <h2>Next Steps (Week 2)</h2>
+                <div class="two-column">
+                    <div>
+                        <ol>
+                            <li>Complete ACL Anthology searches</li>
+                            <li>Complete Semantic Scholar searches</li>
+                            <li>Run arXiv searches for grey literature</li>
+                            <li>Add all papers to Zotero</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <ol start="5">
+                            <li>Remove all duplicates</li>
+                            <li>Begin Title/Abstract Screening</li>
+                            <li>Apply Inclusion/Exclusion Criteria</li>
+                            <li>Start Data Extraction</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 16: Thank You -->
+            <section class="title-slide">
+                <h1>Thank You</h1>
+                <h3>Questions?</h3>
+                <p style="margin-top: 50px; color: var(--text-light); font-size: 0.85em;">
+                    <strong>Marriam Rasib</strong><br>
+                    MSDS24027<br>
+                    msds24027@itu.edu.pk
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            controls: true,
+            progress: true,
+            center: false,
+            fragments: false,
+            width: 1200,
+            height: 750,
+            margin: 0.08,
+            minScale: 0.2,
+            maxScale: 1.5
+        });
+    </script>
+</body>
+
+</html>
