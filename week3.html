@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +35,7 @@
 
         .reveal .slides section {
             background: var(--bg-card);
-            padding: 35px 45px;
+            padding: 30px 40px;
             border-radius: 12px;
             box-sizing: border-box;
             height: 100%;
@@ -55,8 +54,8 @@
             color: var(--primary);
             font-weight: 600;
             font-size: 1.5em;
-            margin-bottom: 0.7em;
-            padding-bottom: 0.3em;
+            margin-bottom: 0.55em;
+            padding-bottom: 0.25em;
             border-bottom: 3px solid var(--secondary);
             display: inline-block;
         }
@@ -72,21 +71,21 @@
             color: var(--primary);
             font-weight: 600;
             font-size: 1em;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.4em;
         }
 
         .reveal p {
             color: var(--text-dark);
             font-weight: 400;
-            line-height: 1.6;
+            line-height: 1.5;
             font-size: 0.85em;
-            margin-bottom: 0.6em;
+            margin-bottom: 0.5em;
         }
 
         .reveal li {
             color: var(--text-dark);
-            margin-bottom: 0.5em;
-            line-height: 1.5;
+            margin-bottom: 0.45em;
+            line-height: 1.45;
             font-size: 0.8em;
         }
 
@@ -98,7 +97,7 @@
         .reveal ul,
         .reveal ol {
             margin-left: 1.2em;
-            margin-bottom: 0.6em;
+            margin-bottom: 0.5em;
         }
 
         .reveal ul li::marker {
@@ -110,29 +109,35 @@
             font-weight: 600;
         }
 
+        /* =========================
+           GENERAL TABLE
+        ========================= */
+
         .reveal table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 0.65em;
+            margin: 10px 0;
+            font-size: 0.58em;
             background: var(--bg-card);
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            table-layout: fixed;
         }
 
         .reveal table th {
             background: var(--primary);
             color: white;
-            padding: 10px 12px;
+            padding: 7px 9px;
             text-align: left;
             font-weight: 600;
         }
 
         .reveal table td {
-            padding: 8px 12px;
+            padding: 6px 9px;
             border-bottom: 1px solid var(--border);
             color: var(--text-dark);
+            line-height: 1.25;
         }
 
         .reveal table tr:last-child td {
@@ -143,11 +148,15 @@
             background: var(--bg-light);
         }
 
+        /* =========================
+           BLOCKS
+        ========================= */
+
         .reveal .block {
             background: var(--bg-light);
             border-left: 4px solid var(--secondary);
-            padding: 15px 18px;
-            margin: 12px 0;
+            padding: 12px 16px;
+            margin: 10px 0;
             border-radius: 6px;
         }
 
@@ -159,8 +168,8 @@
         .reveal .alert-block {
             background: #fef2f2;
             border-left: 4px solid var(--danger);
-            padding: 15px 18px;
-            margin: 12px 0;
+            padding: 12px 16px;
+            margin: 10px 0;
             border-radius: 6px;
         }
 
@@ -172,8 +181,8 @@
         .reveal .warning-block {
             background: #fffbeb;
             border-left: 4px solid var(--accent);
-            padding: 15px 18px;
-            margin: 12px 0;
+            padding: 12px 16px;
+            margin: 10px 0;
             border-radius: 6px;
         }
 
@@ -182,12 +191,16 @@
             font-size: 0.8em;
         }
 
+        /* =========================
+           CARDS
+        ========================= */
+
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 15px 18px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+            padding: 13px 16px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
         }
 
         .card-primary {
@@ -205,6 +218,10 @@
         .card-danger {
             border-top: 4px solid var(--danger);
         }
+
+        /* =========================
+           BADGES
+        ========================= */
 
         .badge-done {
             background: #d1fae5;
@@ -233,32 +250,23 @@
             font-weight: 600;
         }
 
+        /* =========================
+           TWO COLUMN
+        ========================= */
+
         .two-column {
             display: flex;
             gap: 25px;
             justify-content: space-between;
         }
 
-        .two-column>div {
+        .two-column > div {
             flex: 1;
         }
 
-        .reveal .slide-number {
-            background: var(--primary);
-            color: white;
-            border-radius: 4px;
-            padding: 4px 10px;
-            font-size: 0.75em;
-        }
-
-        .reveal .progress {
-            color: var(--secondary);
-            height: 4px;
-        }
-
-        .reveal .controls {
-            color: var(--primary);
-        }
+        /* =========================
+           TITLE SLIDE
+        ========================= */
 
         .title-slide {
             text-align: center;
@@ -282,8 +290,16 @@
             line-height: 1.9;
         }
 
+        /* =========================
+           HIGHLIGHT
+        ========================= */
+
         .highlight-box {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            background: linear-gradient(
+                135deg,
+                #eff6ff 0%,
+                #dbeafe 100%
+            );
             border: 2px solid var(--secondary);
             border-radius: 12px;
             padding: 22px;
@@ -297,6 +313,10 @@
             font-size: 1.3em;
         }
 
+        /* =========================
+           STATS
+        ========================= */
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -305,7 +325,11 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            background: linear-gradient(
+                135deg,
+                #eff6ff 0%,
+                #dbeafe 100%
+            );
             border-radius: 10px;
             padding: 18px;
             text-align: center;
@@ -325,445 +349,1017 @@
             letter-spacing: 0.05em;
             margin-top: 6px;
         }
+
+        /* =====================================================
+           SLIDE 5 & 6
+           COMPACT PAPER TABLE
+        ===================================================== */
+
+        .paper-table {
+            font-size: 0.54em !important;
+            margin-top: 8px !important;
+            margin-bottom: 5px !important;
+        }
+
+        .paper-table th {
+            padding: 6px 8px !important;
+            line-height: 1.15 !important;
+        }
+
+        .paper-table td {
+            padding: 5px 8px !important;
+            line-height: 1.18 !important;
+            vertical-align: middle !important;
+        }
+
+        .paper-table th:nth-child(1),
+        .paper-table td:nth-child(1) {
+            width: 5%;
+        }
+
+        .paper-table th:nth-child(2),
+        .paper-table td:nth-child(2) {
+            width: 42%;
+        }
+
+        .paper-table th:nth-child(3),
+        .paper-table td:nth-child(3) {
+            width: 10%;
+        }
+
+        .paper-table th:nth-child(4),
+        .paper-table td:nth-child(4) {
+            width: 18%;
+        }
+
+        .paper-table th:nth-child(5),
+        .paper-table td:nth-child(5) {
+            width: 25%;
+        }
+
+        .table-note {
+            font-size: 0.62em !important;
+            color: var(--text-light) !important;
+            margin-top: 4px !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* =====================================================
+           SLIDE 10
+           2 x 2 LEARNING CARDS
+        ===================================================== */
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 10px;
+        }
+
+        .learning-card {
+            min-height: 175px;
+            padding: 13px 16px;
+            box-sizing: border-box;
+        }
+
+        .learning-card h4 {
+            font-size: 0.88em;
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+
+        .learning-card p {
+            font-size: 0.69em !important;
+            line-height: 1.4 !important;
+            margin: 0 !important;
+        }
+
+        .learning-card .learning-number {
+            display: inline-flex;
+            width: 27px;
+            height: 27px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-size: 0.65em;
+            margin-right: 7px;
+            vertical-align: middle;
+        }
+
+        .learning-card h4 .learning-title {
+            vertical-align: middle;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .reveal .slide-number {
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 0.75em;
+        }
+
+        .reveal .progress {
+            color: var(--secondary);
+            height: 4px;
+        }
+
+        .reveal .controls {
+            color: var(--primary);
+        }
     </style>
 </head>
 
 <body>
-    <div class="reveal">
-        <div class="slides">
-            <!-- Slide 1: Title -->
-            <section class="title-slide">
-                <h1>SLR Week 3 Progress Report</h1>
-                <h3>Systematic Literature Review: AI-Based Automated Medical Coding</h3>
-                <div class="meta">
-                    <p><strong>Marriam Rasib</strong> (MSDS24027)</p>
-                    <p>Information Technology University (ITU)</p>
-                    <p>Supervisor: Dr. Muhammad Asif</p>
-                    <p>October 2, 2026</p>
-                </div>
-            </section>
 
-            <!-- Slide 2: Agenda -->
-            <section>
-                <h2>Agenda</h2>
-                <div class="two-column">
-                    <div>
-                        <ol>
-                            <li>Full-Text Screening Progress</li>
-                            <li>Data Extraction Table</li>
-                            <li>Included Papers Summary</li>
-                            <li>Excluded Papers Summary</li>
-                        </ol>
-                    </div>
-                    <div>
-                        <ol start="5">
-                            <li>Research Gap Identified</li>
-                            <li>CITI & PhysioNet Status</li>
-                            <li>Key Learnings</li>
-                            <li>Plan for Week 4</li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
+<div class="reveal">
+    <div class="slides">
 
-            <!-- Slide 3: Full-Text Screening Progress -->
-            <section>
-                <h2>Full-Text Screening Progress</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">78</span>
-                        <span class="stat-label">Title/Abstract Included</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">24</span>
-                        <span class="stat-label">Full-Text Included</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">163</span>
-                        <span class="stat-label">Excluded</span>
-                    </div>
-                </div>
-                <div class="block">
-                    <h4>Current Status</h4>
-                    <ul style="font-size: 0.75em; margin-bottom: 0;">
-                        <li>Full-text screening <strong>in progress</strong> — 24 papers included so far</li>
-                        <li>Data extraction table being populated for included papers</li>
-                        <li>Each paper is being categorized by coding system, AI method, and dataset</li>
-                    </ul>
-                </div>
-            </section>
+        <!-- =====================================================
+             SLIDE 1
+        ====================================================== -->
+        <section class="title-slide">
 
-            <!-- Slide 4: Data Extraction Table Structure -->
-            <section>
-                <h2>Data Extraction Table</h2>
-                <div class="block">
-                    <p>Each included paper is being extracted into a structured table with the following fields:</p>
-                </div>
-                <div class="two-column" style="font-size: 0.75em;">
-                    <div>
-                        <h4>Paper Info</h4>
-                        <ul>
-                            <li>Title</li>
-                            <li>Authors</li>
-                            <li>Year</li>
-                            <li>Venue</li>
-                            <li>DOI</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Technical Details</h4>
-                        <ul>
-                            <li>Dataset Name</li>
-                            <li>Coding System</li>
-                            <li>AI Method</li>
-                            <li>Validation Method</li>
-                            <li>Results</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <h1>SLR Week 3 Progress Report</h1>
 
-            <!-- Slide 5: Included Papers Summary -->
-            <section>
-                <h2>Included Papers Summary</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Paper</th>
-                            <th>Year</th>
-                            <th>Coding System</th>
-                            <th>AI Method</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Kane et al. — ICD-10-CM Embedding Dataset</td>
-                            <td>2023</td>
-                            <td>ICD-10-CM</td>
-                            <td>BioGPT + Autoencoder</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Popescu et al. — Two-Stage Pipeline to SNOMED CT</td>
-                            <td>2026</td>
-                            <td>SNOMED CT</td>
-                            <td>Mistral-7B + FAISS + LLM</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Khaleghi et al. — Tree-based CPT Classification</td>
-                            <td>2021</td>
-                            <td>CPT</td>
-                            <td>Random Forest + CWR</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Bi et al. — LLM Summarisation for Clinical Coding</td>
-                            <td>2024</td>
-                            <td>ICD (Clinical)</td>
-                            <td>BioMistral + Llama2 (QLoRA)</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Annareddy et al. — AI-Driven Dental Procedure Coding</td>
-                            <td>2026</td>
-                            <td>CDT</td>
-                            <td>GPT-4o, QLoRA, PEFT, Bi-GRU</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>El Moheb et al. — Open-architecture AI for CPT</td>
-                            <td>2025</td>
-                            <td>CPT</td>
-                            <td>GatorTron (345M, 3.9B)</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Li et al. — Mistral-NeMo for Orthopaedic Billing</td>
-                            <td>2026</td>
-                            <td>CPT</td>
-                            <td>Mistral-NeMo</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Li et al. — Verification is All You Need</td>
-                            <td>2025</td>
-                            <td>ICD-10</td>
-                            <td>GPT-4o</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Wang et al. — Validation of 13,102 ICD-10-CM codes</td>
-                            <td>2026</td>
-                            <td>ICD-10-CM</td>
-                            <td>GPT-4o</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Kawas et al. — Medical NER for ICD Prediction</td>
-                            <td>2025</td>
-                            <td>ICD-10</td>
-                            <td>NER + ClinicalBERT</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="font-size: 0.7em; color: var(--text-light);">Showing top 10 of 24 included papers.</p>
-            </section>
+            <h3>
+                Systematic Literature Review:
+                AI-Based Automated Medical Coding
+            </h3>
 
-            <!-- Slide 6: Included Papers Summary (contd.) -->
-            <section>
-                <h2>Included Papers Summary (contd.)</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Paper</th>
-                            <th>Year</th>
-                            <th>Coding System</th>
-                            <th>AI Method</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>11</td>
-                            <td>Wang et al. — LLMs for Cancer Registry Coding</td>
-                            <td>2024</td>
-                            <td>Cancer Registry</td>
-                            <td>Agentic RAG + CoT</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Steed et al. — NLP for Spine Surgery Coding</td>
-                            <td>2025</td>
-                            <td>CPT</td>
-                            <td>Novel NLP Algorithm</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Gramann et al. — ChatGPT vs Doximity GPT</td>
-                            <td>2025</td>
-                            <td>CPT</td>
-                            <td>ChatGPT 4.0, Doximity GPT</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Isch et al. — AI Accuracy in CPT Codes</td>
-                            <td>2025</td>
-                            <td>CPT</td>
-                            <td>ChatGPT 4.0, Gemini</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Schroeder et al. — LLMs for Hand Surgery Coding</td>
-                            <td>2026</td>
-                            <td>ICD-10, CPT</td>
-                            <td>ChatGPT 3.5, 4.0, Gemini</td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Klang et al. — RAG-LLM for ED ICD-10-CM</td>
-                            <td>2024</td>
-                            <td>ICD-10-CM</td>
-                            <td>RAG-enhanced LLMs</td>
-                        </tr>
-                        <tr>
-                            <td>17</td>
-                            <td>Razzaghi et al. — Augmenting Structured Diagnoses</td>
-                            <td>2026</td>
-                            <td>ICD-10-CM</td>
-                            <td>GPT-OSS 120B + RAG</td>
-                        </tr>
-                        <tr>
-                            <td>18</td>
-                            <td>Haag et al. — ICD-10 Classification of Primary Care</td>
-                            <td>2026</td>
-                            <td>ICD-10</td>
-                            <td>German BERT</td>
-                        </tr>
-                        <tr>
-                            <td>19</td>
-                            <td>Mittermeier et al. — ICD-10 for German MRI Reports</td>
-                            <td>2024</td>
-                            <td>ICD-10</td>
-                            <td>GermanBERT, flanT5</td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>Isch et al. — LLMs for Modifier Assignment</td>
-                            <td>2025</td>
-                            <td>CPT + Modifiers</td>
-                            <td>ChatGPT, Gemini</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="font-size: 0.7em; color: var(--text-light);">Showing next 10 of 24 included papers.</p>
-            </section>
+            <div class="meta">
+                <p><strong>Marriam Rasib</strong> (MSDS24027)</p>
+                <p>Information Technology University (ITU)</p>
+                <p>Supervisor: Dr. Muhammad Asif</p>
+                <p>October 2, 2026</p>
+            </div>
 
-            <!-- Slide 7: Excluded Papers Summary -->
-            <section>
-                <h2>Excluded Papers Summary</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">163</span>
-                        <span class="stat-label">Total Excluded</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">40+</span>
-                        <span class="stat-label">Billing Only</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">30+</span>
-                        <span class="stat-label">Review/Editorial</span>
-                    </div>
-                </div>
-                <div class="block">
-                    <h4>Common Exclusion Reasons</h4>
-                    <ul style="font-size: 0.75em; margin-bottom: 0;">
-                        <li><strong>Billing only (no AI)</strong> — CPT coding updates, billing guides</li>
-                        <li><strong>Review/editorial</strong> — Systematic reviews, commentaries</li>
-                        <li><strong>Traditional ML (no LLM)</strong> — Attention networks, BERT variants</li>
-                        <li><strong>Not medical coding</strong> — Clinical NLP, disease detection</li>
-                        <li><strong>Out of scope</strong> — MedDRA, LOINC, ICD-9 only</li>
-                        <li><strong>Pre-2020</strong> — Before LLM era</li>
-                    </ul>
-                </div>
-            </section>
+        </section>
 
-            <!-- Slide 8: Research Gap Identified -->
-            <section>
-                <h2>Research Gap Identified</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Code System</th>
-                            <th>Available Dataset?</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>ICD-10-CM</td>
-                            <td>✅ MIMIC-III/IV, MDACE</td>
-                        </tr>
-                        <tr>
-                            <td>ICD-10-PCS</td>
-                            <td>✅ MIMIC-IV</td>
-                        </tr>
-                        <tr>
-                            <td>CPT</td>
-                            <td>⚠️ Limited — MIMIC-IV cptevents, no dedicated annotated dataset</td>
-                        </tr>
-                        <tr>
-                            <td>HCPCS</td>
-                            <td>⚠️ Limited — MIMIC-IV d_hcpcs dictionary, no dedicated dataset</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="alert-block">
-                    <h4>Key Research Gap</h4>
-                    <p style="font-size: 0.8em; margin: 0;">No dedicated, evidence-annotated public dataset exists for
-                        <strong>CPT and HCPCS coding</strong> — this could serve as the novelty of this thesis.</p>
-                </div>
-            </section>
 
-            <!-- Slide 9: CITI & PhysioNet Status -->
-            <section>
-                <h2>CITI & PhysioNet Status</h2>
-                <div class="two-column">
-                    <div>
-                        <h4>CITI Training</h4>
-                        <ul style="font-size: 0.75em;">
-                            <li><span class="badge-done">Completed</span></li>
-                            <li>Course: Data or Specimens Only Research</li>
-                            <li>Completion: 29-Sep-2026</li>
-                            <li>Record ID: 79977666</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>PhysioNet Access</h4>
-                        <ul style="font-size: 0.75em;">
-                            <li><span class="badge-done">Account Created</span></li>
-                            <li><span class="badge-progress">Credentialing Pending</span></li>
-                            <li>Reference: Dr. Muhammad Asif</li>
-                            <li>Expected: 1-2 weeks</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="block">
-                    <h4>Next Step</h4>
-                    <p style="font-size: 0.8em; margin: 0;">Once MIMIC-IV access is granted, sign the Data Use Agreement
-                        and download the dataset for CLH code execution.</p>
-                </div>
-            </section>
+        <!-- =====================================================
+             SLIDE 2
+        ====================================================== -->
+        <section>
 
-            <!-- Slide 10: Key Learnings -->
-            <section>
-                <h2>Key Learnings This Week</h2>
-                <div class="card card-primary" style="margin-bottom: 12px;">
-                    <h4>Learning 1: Data Extraction is Systematic</h4>
-                    <p style="font-size: 0.8em; margin: 0;">Each paper must be extracted into a structured table with
-                        consistent fields — this ensures comparability and reproducibility.</p>
-                </div>
-                <div class="card card-secondary" style="margin-bottom: 12px;">
-                    <h4>Learning 2: CPT/HCPCS Gap is Real</h4>
-                    <p style="font-size: 0.8em; margin: 0;">Most included papers focus on ICD-10-CM. CPT and HCPCS
-                        coverage is limited — confirming the research gap.</p>
-                </div>
-                <div class="card card-accent" style="margin-bottom: 12px;">
-                    <h4>Learning 3: LLMs are Promising but Not Ready</h4>
-                    <p style="font-size: 0.8em; margin: 0;">Multiple papers show LLMs perform well on frequent codes but
-                        struggle with rare codes and modifiers.</p>
-                </div>
-                <div class="block">
-                    <h4>Learning 4: RAG + Verification is Key</h4>
-                    <p style="font-size: 0.8em; margin: 0;">Papers like "Verification is All You Need" and "RAG-LLM for
-                        ED ICD-10-CM" confirm that retrieval + verification improves accuracy.</p>
-                </div>
-            </section>
+            <h2>Agenda</h2>
 
-            <!-- Slide 11: Next Steps -->
-            <section>
-                <h2>Plan for Week 4</h2>
-                <ol>
-                    <li>Complete <strong>Full-Text Screening</strong> for remaining papers</li>
-                    <li>Finalize <strong>Data Extraction Table</strong> for all included papers</li>
-                    <li>Create <strong>PRISMA Flow Diagram</strong></li>
-                    <li>Start drafting <strong>SLR Paper — Introduction + Methodology</strong></li>
-                    <li>Follow up on <strong>PhysioNet Credentialing</strong> status</li>
-                </ol>
-            </section>
+            <div class="two-column">
 
-            <!-- Slide 12: Thank You -->
-            <section class="title-slide">
-                <h1>Thank You</h1>
-                <h3>Questions?</h3>
-                <p style="margin-top: 50px; color: var(--text-light); font-size: 0.85em;">
-                    <strong>Marriam Rasib</strong><br>
-                    MSDS24027<br>
-                    msds24027@itu.edu.pk
+                <div>
+                    <ol>
+                        <li>Full-Text Screening Progress</li>
+                        <li>Data Extraction Table</li>
+                        <li>Included Papers Summary</li>
+                        <li>Excluded Papers Summary</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <ol start="5">
+                        <li>Research Gap Identified</li>
+                        <li>CITI & PhysioNet Status</li>
+                        <li>Key Learnings</li>
+                        <li>Plan for Week 4</li>
+                    </ol>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 3
+        ====================================================== -->
+        <section>
+
+            <h2>Full-Text Screening Progress</h2>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-number">78</span>
+                    <span class="stat-label">
+                        Title/Abstract Included
+                    </span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">24</span>
+                    <span class="stat-label">
+                        Full-Text Included
+                    </span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">163</span>
+                    <span class="stat-label">
+                        Excluded
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="block">
+
+                <h4>Current Status</h4>
+
+                <ul style="font-size: 0.75em; margin-bottom: 0;">
+
+                    <li>
+                        Full-text screening
+                        <strong>in progress</strong>
+                        — 24 papers included so far
+                    </li>
+
+                    <li>
+                        Data extraction table being populated
+                        for included papers
+                    </li>
+
+                    <li>
+                        Each paper is being categorized by
+                        coding system, AI method, and dataset
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 4
+        ====================================================== -->
+        <section>
+
+            <h2>Data Extraction Table</h2>
+
+            <div class="block">
+
+                <p>
+                    Each included paper is being extracted into
+                    a structured table with the following fields:
                 </p>
-            </section>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
-    <script>
-        Reveal.initialize({
-            hash: true,
-            slideNumber: 'c/t',
-            transition: 'slide',
-            transitionSpeed: 'default',
-            controls: true,
-            progress: true,
-            center: false,
-            fragments: false,
-            width: 1200,
-            height: 750,
-            margin: 0.08,
-            minScale: 0.2,
-            maxScale: 1.5
-        });
-    </script>
-</body>
 
+            </div>
+
+            <div class="two-column" style="font-size: 0.75em;">
+
+                <div>
+
+                    <h4>Paper Info</h4>
+
+                    <ul>
+                        <li>Title</li>
+                        <li>Authors</li>
+                        <li>Year</li>
+                        <li>Venue</li>
+                        <li>DOI</li>
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h4>Technical Details</h4>
+
+                    <ul>
+                        <li>Dataset Name</li>
+                        <li>Coding System</li>
+                        <li>AI Method</li>
+                        <li>Validation Method</li>
+                        <li>Results</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 5
+        ====================================================== -->
+        <section>
+
+            <h2>Included Papers Summary</h2>
+
+            <table class="paper-table">
+
+                <thead>
+
+                    <tr>
+                        <th>#</th>
+                        <th>Paper</th>
+                        <th>Year</th>
+                        <th>Coding System</th>
+                        <th>AI Method</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            Kane et al. — ICD-10-CM Embedding Dataset
+                        </td>
+                        <td>2023</td>
+                        <td>ICD-10-CM</td>
+                        <td>BioGPT + Autoencoder</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            Popescu et al. — Two-Stage Pipeline to SNOMED CT
+                        </td>
+                        <td>2026</td>
+                        <td>SNOMED CT</td>
+                        <td>Mistral-7B + FAISS + LLM</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            Khaleghi et al. — Tree-based CPT Classification
+                        </td>
+                        <td>2021</td>
+                        <td>CPT</td>
+                        <td>Random Forest + CWR</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            Bi et al. — LLM Summarisation for Clinical Coding
+                        </td>
+                        <td>2024</td>
+                        <td>ICD (Clinical)</td>
+                        <td>BioMistral + Llama2 (QLoRA)</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            Annareddy et al. — AI-Driven Dental Procedure Coding
+                        </td>
+                        <td>2026</td>
+                        <td>CDT</td>
+                        <td>GPT-4o, QLoRA, PEFT, Bi-GRU</td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            El Moheb et al. — Open-architecture AI for CPT
+                        </td>
+                        <td>2025</td>
+                        <td>CPT</td>
+                        <td>GatorTron (345M, 3.9B)</td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td>
+                            Li et al. — Mistral-NeMo for Orthopaedic Billing
+                        </td>
+                        <td>2026</td>
+                        <td>CPT</td>
+                        <td>Mistral-NeMo</td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td>
+                            Li et al. — Verification is All You Need
+                        </td>
+                        <td>2025</td>
+                        <td>ICD-10</td>
+                        <td>GPT-4o</td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td>
+                            Wang et al. — Validation of 13,102 ICD-10-CM codes
+                        </td>
+                        <td>2026</td>
+                        <td>ICD-10-CM</td>
+                        <td>GPT-4o</td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td>
+                            Kawas et al. — Medical NER for ICD Prediction
+                        </td>
+                        <td>2025</td>
+                        <td>ICD-10</td>
+                        <td>NER + ClinicalBERT</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <p class="table-note">
+                Showing top 10 of 24 included papers.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 6
+        ====================================================== -->
+        <section>
+
+            <h2>Included Papers Summary (contd.)</h2>
+
+            <table class="paper-table">
+
+                <thead>
+
+                    <tr>
+                        <th>#</th>
+                        <th>Paper</th>
+                        <th>Year</th>
+                        <th>Coding System</th>
+                        <th>AI Method</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>11</td>
+                        <td>
+                            Wang et al. — LLMs for Cancer Registry Coding
+                        </td>
+                        <td>2024</td>
+                        <td>Cancer Registry</td>
+                        <td>Agentic RAG + CoT</td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td>
+                            Steed et al. — NLP for Spine Surgery Coding
+                        </td>
+                        <td>2025</td>
+                        <td>CPT</td>
+                        <td>Novel NLP Algorithm</td>
+                    </tr>
+
+                    <tr>
+                        <td>13</td>
+                        <td>
+                            Gramann et al. — ChatGPT vs Doximity GPT
+                        </td>
+                        <td>2025</td>
+                        <td>CPT</td>
+                        <td>ChatGPT 4.0, Doximity GPT</td>
+                    </tr>
+
+                    <tr>
+                        <td>14</td>
+                        <td>
+                            Isch et al. — AI Accuracy in CPT Codes
+                        </td>
+                        <td>2025</td>
+                        <td>CPT</td>
+                        <td>ChatGPT 4.0, Gemini</td>
+                    </tr>
+
+                    <tr>
+                        <td>15</td>
+                        <td>
+                            Schroeder et al. — LLMs for Hand Surgery Coding
+                        </td>
+                        <td>2026</td>
+                        <td>ICD-10, CPT</td>
+                        <td>ChatGPT 3.5, 4.0, Gemini</td>
+                    </tr>
+
+                    <tr>
+                        <td>16</td>
+                        <td>
+                            Klang et al. — RAG-LLM for ED ICD-10-CM
+                        </td>
+                        <td>2024</td>
+                        <td>ICD-10-CM</td>
+                        <td>RAG-enhanced LLMs</td>
+                    </tr>
+
+                    <tr>
+                        <td>17</td>
+                        <td>
+                            Razzaghi et al. — Augmenting Structured Diagnoses
+                        </td>
+                        <td>2026</td>
+                        <td>ICD-10-CM</td>
+                        <td>GPT-OSS 120B + RAG</td>
+                    </tr>
+
+                    <tr>
+                        <td>18</td>
+                        <td>
+                            Haag et al. — ICD-10 Classification of Primary Care
+                        </td>
+                        <td>2026</td>
+                        <td>ICD-10</td>
+                        <td>German BERT</td>
+                    </tr>
+
+                    <tr>
+                        <td>19</td>
+                        <td>
+                            Mittermeier et al. — ICD-10 for German MRI Reports
+                        </td>
+                        <td>2024</td>
+                        <td>ICD-10</td>
+                        <td>GermanBERT, flanT5</td>
+                    </tr>
+
+                    <tr>
+                        <td>20</td>
+                        <td>
+                            Isch et al. — LLMs for Modifier Assignment
+                        </td>
+                        <td>2025</td>
+                        <td>CPT + Modifiers</td>
+                        <td>ChatGPT, Gemini</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <p class="table-note">
+                Showing next 10 of 24 included papers.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 7
+        ====================================================== -->
+        <section>
+
+            <h2>Excluded Papers Summary</h2>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-number">163</span>
+                    <span class="stat-label">Total Excluded</span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Billing Only</span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Review/Editorial</span>
+                </div>
+
+            </div>
+
+            <div class="block">
+
+                <h4>Common Exclusion Reasons</h4>
+
+                <ul style="font-size: 0.75em; margin-bottom: 0;">
+
+                    <li>
+                        <strong>Billing only (no AI)</strong>
+                        — CPT coding updates, billing guides
+                    </li>
+
+                    <li>
+                        <strong>Review/editorial</strong>
+                        — Systematic reviews, commentaries
+                    </li>
+
+                    <li>
+                        <strong>Traditional ML (no LLM)</strong>
+                        — Attention networks, BERT variants
+                    </li>
+
+                    <li>
+                        <strong>Not medical coding</strong>
+                        — Clinical NLP, disease detection
+                    </li>
+
+                    <li>
+                        <strong>Out of scope</strong>
+                        — MedDRA, LOINC, ICD-9 only
+                    </li>
+
+                    <li>
+                        <strong>Pre-2020</strong>
+                        — Before LLM era
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 8
+        ====================================================== -->
+        <section>
+
+            <h2>Research Gap Identified</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Code System</th>
+                        <th>Available Dataset?</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>ICD-10-CM</td>
+                        <td>✅ MIMIC-III/IV, MDACE</td>
+                    </tr>
+
+                    <tr>
+                        <td>ICD-10-PCS</td>
+                        <td>✅ MIMIC-IV</td>
+                    </tr>
+
+                    <tr>
+                        <td>CPT</td>
+                        <td>
+                            ⚠️ Limited — MIMIC-IV cptevents,
+                            no dedicated annotated dataset
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>HCPCS</td>
+                        <td>
+                            ⚠️ Limited — MIMIC-IV d_hcpcs dictionary,
+                            no dedicated dataset
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <div class="alert-block">
+
+                <h4>Key Research Gap</h4>
+
+                <p style="font-size: 0.8em; margin: 0;">
+
+                    No dedicated, evidence-annotated public dataset
+                    exists for <strong>CPT and HCPCS coding</strong>
+                    — this could serve as the novelty of this thesis.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 9
+        ====================================================== -->
+        <section>
+
+            <h2>CITI & PhysioNet Status</h2>
+
+            <div class="two-column">
+
+                <div>
+
+                    <h4>CITI Training</h4>
+
+                    <ul style="font-size: 0.75em;">
+
+                        <li>
+                            <span class="badge-done">
+                                Completed
+                            </span>
+                        </li>
+
+                        <li>
+                            Course:
+                            Data or Specimens Only Research
+                        </li>
+
+                        <li>
+                            Completion:
+                            29-Sep-2026
+                        </li>
+
+                        <li>
+                            Record ID:
+                            79977666
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h4>PhysioNet Access</h4>
+
+                    <ul style="font-size: 0.75em;">
+
+                        <li>
+                            <span class="badge-done">
+                                Account Created
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="badge-progress">
+                                Credentialing Pending
+                            </span>
+                        </li>
+
+                        <li>
+                            Reference:
+                            Dr. Muhammad Asif
+                        </li>
+
+                        <li>
+                            Expected:
+                            1-2 weeks
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="block">
+
+                <h4>Next Step</h4>
+
+                <p style="font-size: 0.8em; margin: 0;">
+
+                    Once MIMIC-IV access is granted,
+                    sign the Data Use Agreement and download
+                    the dataset for CLH code execution.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 10
+        ====================================================== -->
+        <section>
+
+            <h2>Key Learnings This Week</h2>
+
+            <div class="learning-grid">
+
+                <!-- Learning 1 -->
+                <div class="card card-primary learning-card">
+
+                    <h4>
+
+                        <span class="learning-number">
+                            1
+                        </span>
+
+                        <span class="learning-title">
+                            Learning 1: Data Extraction is Systematic
+                        </span>
+
+                    </h4>
+
+                    <p>
+                        Each paper must be extracted into a
+                        structured table with consistent fields —
+                        this ensures comparability and reproducibility.
+                    </p>
+
+                </div>
+
+
+                <!-- Learning 2 -->
+                <div class="card card-secondary learning-card">
+
+                    <h4>
+
+                        <span class="learning-number">
+                            2
+                        </span>
+
+                        <span class="learning-title">
+                            Learning 2: CPT/HCPCS Gap is Real
+                        </span>
+
+                    </h4>
+
+                    <p>
+                        Most included papers focus on ICD-10-CM.
+                        CPT and HCPCS coverage is limited —
+                        confirming the research gap.
+                    </p>
+
+                </div>
+
+
+                <!-- Learning 3 -->
+                <div class="card card-accent learning-card">
+
+                    <h4>
+
+                        <span class="learning-number">
+                            3
+                        </span>
+
+                        <span class="learning-title">
+                            Learning 3: LLMs are Promising but Not Ready
+                        </span>
+
+                    </h4>
+
+                    <p>
+                        Multiple papers show LLMs perform well
+                        on frequent codes but struggle with
+                        rare codes and modifiers.
+                    </p>
+
+                </div>
+
+
+                <!-- Learning 4 -->
+                <div class="card card-secondary learning-card">
+
+                    <h4>
+
+                        <span class="learning-number">
+                            4
+                        </span>
+
+                        <span class="learning-title">
+                            Learning 4: RAG + Verification is Key
+                        </span>
+
+                    </h4>
+
+                    <p>
+                        Papers like "Verification is All You Need"
+                        and "RAG-LLM for ED ICD-10-CM" confirm that
+                        retrieval + verification improves accuracy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 11
+        ====================================================== -->
+        <section>
+
+            <h2>Plan for Week 4</h2>
+
+            <ol>
+
+                <li>
+                    Complete
+                    <strong>Full-Text Screening</strong>
+                    for remaining papers
+                </li>
+
+                <li>
+                    Finalize
+                    <strong>Data Extraction Table</strong>
+                    for all included papers
+                </li>
+
+                <li>
+                    Create
+                    <strong>PRISMA Flow Diagram</strong>
+                </li>
+
+                <li>
+                    Start drafting
+                    <strong>SLR Paper — Introduction + Methodology</strong>
+                </li>
+
+                <li>
+                    Follow up on
+                    <strong>PhysioNet Credentialing</strong>
+                    status
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- =====================================================
+             SLIDE 12
+        ====================================================== -->
+        <section class="title-slide">
+
+            <h1>Thank You</h1>
+
+            <h3>Questions?</h3>
+
+            <p style="
+                margin-top: 50px;
+                color: var(--text-light);
+                font-size: 0.85em;
+            ">
+
+                <strong>Marriam Rasib</strong>
+                <br>
+
+                MSDS24027
+                <br>
+
+                msds24027@itu.edu.pk
+
+            </p>
+
+        </section>
+
+    </div>
+</div>
+
+
+<!-- =========================================================
+     REVEAL.JS
+========================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+
+<script>
+
+    Reveal.initialize({
+
+        hash: true,
+
+        slideNumber: 'c/t',
+
+        transition: 'slide',
+
+        transitionSpeed: 'default',
+
+        controls: true,
+
+        progress: true,
+
+        center: false,
+
+        fragments: false,
+
+        width: 1200,
+
+        height: 750,
+
+        margin: 0.08,
+
+        minScale: 0.2,
+
+        maxScale: 1.5
+
+    });
+
+</script>
+
+</body>
 </html>
